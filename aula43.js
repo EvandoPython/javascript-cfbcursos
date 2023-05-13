@@ -1,18 +1,45 @@
-
-const filtroMaior18=(valor)=>{
-    if(valor>=18)
-    return valor
-}
-
-const filtroMenor18=(valor)=>{
-    if(valor<18)
-    return valor
-}
-const idades=[15,21,30,17,18,44,12,50]
-const maior=idades.filter(filtroMaior18)
-const menor=idades.filter(filtroMenor18)
+const caixaCursos=document.querySelector("#caixaCursos")
+const btn_c=[...document.querySelectorAll(".curso")]
+const c1_2=document.querySelector("#c1_2")
+const cursos=["HTML","CSS","JavaScript","PHP","React","MySql","ReactNative"]
+const btnCursoSelecionado=document.getElementById("btnCursoSelecionado")
 
 
-console.log(idades)
-console.log(maior)
-console.log(menor)
+cursos.map((el,chave)=>{
+    const novoElemento=document.createElement("div")
+    novoElemento.setAttribute("id","c"+chave)
+    novoElemento.setAttribute("class","curso c1")
+    novoElemento.innerHTML=el
+
+
+    const comandos=document.createElement("div")
+    comandos.setAttribute("class","comandos")
+
+
+    const rb=document.createElement("input")
+    rb.setAttribute("type","radio")
+    rb.setAttribute("name","rb_curso")
+
+    comandos.appendChild(rb)
+
+    novoElemento.appendChild(comandos)
+
+    caixaCursos.appendChild(novoElemento)
+
+
+})
+
+
+btnCursoSelecionado.addEventListener("click",(evt)=>{
+    const todosRadios=[...document.querySelectorAll("input[type=radio]")]
+    let radioSelecionado=todosRadios.filter((ele,ind,arr)=>{
+        return ele.checked
+    })
+    
+    radioSelecionado=radioSelecionado[0]
+    const cursoSelecionado=radioSelecionado.parentNode.fisrtChild
+    alert(cursoSelecionado)
+    //console.log(todosRadios)
+    //console.log(radioSelecionado)
+    //console.log(cursoSelecionado)
+})
