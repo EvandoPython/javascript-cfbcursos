@@ -10,7 +10,7 @@ cursos.map((el,chave)=>{
     novoElemento.setAttribute("id","c"+chave)
     novoElemento.setAttribute("class","curso c1")
     novoElemento.innerHTML=el
-
+   
 
     const comandos=document.createElement("div")
     comandos.setAttribute("class","comandos")
@@ -37,7 +37,7 @@ btnCursoSelecionado.addEventListener("click",(evt)=>{
     })
     
     radioSelecionado=radioSelecionado[0]
-    const cursoSelecionado=radioSelecionado.parentNode.fisrtChild
+    const cursoSelecionado=radioSelecionado.parentNode.parentNode
     alert(cursoSelecionado)
     //console.log(todosRadios)
     //console.log(radioSelecionado)
