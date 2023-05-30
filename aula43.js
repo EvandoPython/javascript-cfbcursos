@@ -1,7 +1,7 @@
 const caixaCursos=document.querySelector("#caixaCursos")
 const btn_c=[...document.querySelectorAll(".curso")]
 const c1_2=document.querySelector("#c1_2")
-const cursos=["HTML","CSS","JavaScript","PHP","React","MySql","ReactNative"]
+const cursos=["HTML","CSS","JavaScript","PHP","React","MySql","ReactNative"];
 const btnCursoSelecionado=document.getElementById("btnCursoSelecionado")
 
 
